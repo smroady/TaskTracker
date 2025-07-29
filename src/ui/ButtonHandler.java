@@ -10,8 +10,8 @@ public class ButtonHandler {
 	public void handleRequest(String command, JFrame frame) { 
 		if(command.equals("Create New Task +")) { 
 			CreateTaskWindow newTask = new CreateTaskWindow(frame);
-		} else {
-			 
+		} else if(command.equals("Clear")) {
+			//do nothing rofl  
 		}
 	}
 }
