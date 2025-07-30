@@ -13,6 +13,10 @@ public class DBHandler {
 		createConnection(); 
 		createTaskTable(); 
 	}
+	
+	public DBHandler(Task task) {
+		addNewTask(task); 
+	}
 
 	private void createConnection() {
 		try {
@@ -37,7 +41,7 @@ public class DBHandler {
 		}
 	}
 	
-	public void addNewTack(Task task) { 
+	private void addNewTask(Task task) { 
 		String sqlStatement = "INSERT INTO tasks(id, title, description) VALUES (?, ?, ?)"; 
 		 try (PreparedStatement pstmt = conn.prepareStatement(sqlStatement)) {
 	            pstmt.setString(1, task.getTaskID());
